@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title=title
+        meta(charset='utf-8')
+        meta(name='author',content='zfq')
+        block css
+    body
+        ul
+          each item in files
+            li
+              a(href=dir+'/'+item.file)= `[${item.icon}] ${item.file}`
+
+    block script
