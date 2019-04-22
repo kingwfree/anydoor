@@ -1,3 +1,3 @@
-#! D:\nodejs node
+#! /usr/bin/env node
 
 require('../src/index')
