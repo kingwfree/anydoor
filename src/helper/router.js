@@ -3,23 +3,39 @@ const {join,basename,relative} = require('path')
 const {promisify} = require('util')
 const stat = promisify(fs.stat)
 const readdir = promisify(fs.readdir)
-const config  = require('../config/defaultConfig')
 const pug = require('pug')
+const mime = require('./mime')
+const compress = require('./compress')
+const range = require('./range')
+const isFresh = require('./cache')
+
 const pugPath = join(__dirname,'../views/template.pug')
 const source = fs.readFileSync(pugPath)
 const template = pug.compile(source.toString())
-const mime = require('./mime')
-const compress = require('./compress.js')
 
-module.exports = async function (req,res,filePath) {
+module.exports = async function (req,res,filePath,config) {
   try{
     const stats =await stat(filePath)
     if(stats.isFile()){
       const contentType = mime(filePath)
-      res.statusCode = 200
       res.setHeader('Content-Type',contentType)
+
+      if(isFresh(stats,req,res)){
+        res.statusCode = 304
+        res.end()
+        return;
+      }
+
       //压缩文件
-      let rs = fs.createReadStream(filePath);
+      let rs;
+      const {code,start,end} = range(stats.size,req,res)
+      res.statusCode = code
+      if (code === 200) {
+        rs = fs.createReadStream(filePath);
+      }else{
+        rs = fs.createReadStream(filePath,{start,end});
+      }
+      //rs = fs.createReadStream(filePath);
       if(filePath.match(config.compress)){
         rs = compress(rs,req,res)
       }
