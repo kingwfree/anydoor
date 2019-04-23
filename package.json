@@ -1,10 +1,10 @@
 {
-  "name": "anydoor_kwf",
+  "name": "anydoor_zfq",
   "version": "0.1.1",
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
   "bin":{
-      "anydoor":"bin/anydoor_kwf"
+      "anydoor":"bin/anydoor_zfq"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,8 +24,5 @@
     "chalk": "^2.4.2",
     "pug": "^2.0.3",
     "yargs": "^13.2.2"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
