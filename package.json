@@ -1,10 +1,10 @@
 {
   "name": "anydoor_zfq",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
-  "bin":{
-      "anydoor":"bin/anydoor_zfq"
+  "bin": {
+    "anydoor": "bin/anydoor_zfq"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
