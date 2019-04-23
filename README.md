@@ -1,4 +1,4 @@
-# anydoor
+# anydoor_zfq
 Tiny NodeJs Static Web Server
 
 ## 安装
