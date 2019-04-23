@@ -1,5 +1,5 @@
 {
-  "name": "anydoor",
+  "name": "kwf-anydoor",
   "version": "0.1.0",
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
