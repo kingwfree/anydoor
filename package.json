@@ -1,6 +1,6 @@
 {
   "name": "kwf-anydoor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
   "bin":{
