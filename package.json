@@ -4,7 +4,7 @@
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
   "bin": {
-    "anydoor": "bin/anydoor_zfq"
+    "anydoor_zfq": "bin/anydoor_zfq"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
