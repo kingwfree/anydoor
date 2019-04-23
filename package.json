@@ -1,6 +1,6 @@
 {
   "name": "anydoor_zfq",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Tiny NodeJs Static Web Server",
   "main": "src/app.js",
   "bin": {
